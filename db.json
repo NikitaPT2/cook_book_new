@@ -1,0 +1,52 @@
+{
+  "recipes": [
+    {
+      "title": "Tasty Teriyaki Chicken Stir-Fry",
+      "listIngredients": [
+        "1 pound boneless, skinless chicken breast, cut into thin strips",
+        "2 tablespoons cornstarch",
+        "1 tablespoon vegetable oil",
+        "1 small onion, sliced",
+        "1 red bell pepper, sliced",
+        "1 cup snow peas",
+        "2 tablespoons teriyaki sauce",
+        "2 tablespoons water",
+        "1 tablespoon cornstarch",
+        "1 tablespoon sugar",
+        "2 tablespoons soy sauce",
+        "2 cloves garlic, minced",
+        "1 teaspoon grated ginger"
+      ],
+      "method": "In a large bowl, toss chicken with 2 tablespoons cornstarch to coat.\nIn a large skillet, heat oil over medium-high heat. Add chicken and cook until browned and cooked through, about 3-5 minutes. Remove chicken from skillet and set aside.\nIn the same skillet, add onion, bell pepper, and snow peas. Cook until vegetables are tender, about 3-5 minutes.\nIn a small bowl, whisk together teriyaki sauce, water, 1 tablespoon cornstarch, sugar, soy sauce, garlic, and ginger. Pour mixture over vegetables in skillet and bring to a boil. Cook until sauce has thickened, about 2-3 minutes.\nAdd chicken back to skillet and stir to coat with sauce. Serve over rice.",
+      "time": "25",
+      "id": 1
+    },
+    {
+      "title": "Delicious Spinach and Feta Stuffed Chicken Breast",
+      "listIngredients": [
+        "4 boneless, skinless chicken breasts",
+        "1 (10-ounce) package frozen chopped spinach, thawed and squeezed dry",
+        "1 cup crumbled feta cheese",
+        "3 tablespoons chopped fresh parsley",
+        "2 cloves garlic, minced",
+        "2 tablespoons olive oil",
+        "1 teaspoon dried thyme",
+        "salt and pepper, to taste"
+      ],
+      "method": "Preheat oven to 400°F. Line a baking dish with aluminum foil and lightly grease with cooking spray.\nCut a horizontal slit in the thickest part of each chicken breast to form a pocket.\nIn a bowl, mix together spinach, feta cheese, parsley, and garlic. Divide mixture evenly among chicken pockets, stuffing as much as possible.\nIn a small bowl, whisk together olive oil, thyme, salt, and pepper. Brush mixture over chicken.\nBake for 25-30 minutes, or until chicken is cooked through and no longer pink in the center. Serve with rice or vegetables.",
+      "time": "30",
+      "id": 2
+    },
+    {
+      "title": "Test",
+      "listIngredients": [
+        "Test",
+        "Test",
+        "Test"
+      ],
+      "method": "Test Test Test",
+      "time": "4",
+      "id": 3
+    }
+  ]
+}
