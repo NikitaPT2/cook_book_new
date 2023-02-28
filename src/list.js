@@ -1,9 +1,28 @@
 import { Link } from "react-router-dom";
-import { useAPI } from "./context";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import axios from "axios";
+// import { useAPI } from "./context";
 
 const RecipeList = () => {
-  // Use the useAPI hook to access the recipes and query state.
-  const { recipes, query } = useAPI();
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    getRecipes();
+  }, []);
+
+  const getRecipes = async () => {
+    const response = await axios.get("http://localhost:3000/recipes");
+    setRecipes(response.data);
+  };
+
+  const { loading } = useSelector((state) => state.recipe);
+  const query = useSelector((state) => state.recipeFilter.query);
+
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
+
   // Render a list of recipes based on the current `query` state.
   return (
     <div className="recipe-list">

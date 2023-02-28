@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
-import { useAPI } from "./context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Create from "./create";
 import RecipeDetails from "./recipeDetails";
-import { APIContextProvider } from "./context";
 import RecipeList from "./list";
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import { useDispatch } from "react-redux";
+import { setQuery } from "./redux/querySlice";
+// import { APIContextProvider } from "./context";
+// import { useAPI } from "./context";
 
 const Navbar = () => {
-  const { setQuery } = useAPI();
+  const dispatch = useDispatch()
 
   return (
     <div className="links">
@@ -19,7 +23,7 @@ const Navbar = () => {
           <label>Search: </label>
           <input
             className="SearchR"
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => dispatch(setQuery(e.target.value))}
           />
         </div>
         <div className="create-link">
@@ -40,7 +44,7 @@ const Home = () => {
 
 function App() {
   return (
-    <APIContextProvider>
+    <Provider store={store}>
       <Router>
         <Navbar />
         <Routes>
@@ -49,7 +53,7 @@ function App() {
           <Route path="/recipes/:id" element={<RecipeDetails />} />
         </Routes>
       </Router>
-    </APIContextProvider>
+    </Provider>
   );
 }
 

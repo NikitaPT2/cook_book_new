@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { useAPI } from "./context";
+import { useSelector } from "react-redux";
+import axios from "axios";
+//import { useAPI } from "./context";
 
 const Create = () => {
   const [title, setTitle] = useState("");
@@ -8,32 +10,30 @@ const Create = () => {
   const [method, setMethod] = useState("");
   const [time, setTime] = useState("");
   const [listIngredients, setListIngredients] = useState([]);
-  const { isPending, setIsPending, url } = useAPI();
+  const isPending = useSelector((state) => state.pending)
 
-  const nav = useNavigate();
+  const nav = useNavigate()
 
-  const handleIngredients = (e) => {
-    e.preventDefault();
-    setListIngredients([...listIngredients, ingredients]);
-    setIngredients("");
-  };
+    const handleIngredients = (e) => {
+        e.preventDefault()
+        setListIngredients([...listIngredients, ingredients])
+        setIngredients('')
+    }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const recipe = { title, listIngredients, method, time };
-
-    setIsPending(true);
-
-    fetch(url, {
-      method: "POST",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify(recipe),
-    }).then(() => {
-      console.log("New recipe added");
-      setIsPending(false);
-      nav("/");
-    });
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            await axios.post("http://localhost:3000/recipes", {
+                title,
+                listIngredients,
+                method,
+                time,
+            })
+            nav('/')
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
   return (
     <div className="create">
@@ -56,7 +56,7 @@ const Create = () => {
         <button type="button" onClick={handleIngredients}>
           add
         </button>
-        <p>Current ingredients: {listIngredients.toString()}</p>
+        <p>Current ingredients: { listIngredients.toString() }</p>
         <label>Recipe method:</label>
         <textarea
           className="ingred"

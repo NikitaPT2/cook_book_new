@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, createContext } from "react";
+/* import React, { useContext, useState, useEffect, createContext } from "react";
 
 const APIContext = createContext();
 
@@ -45,4 +45,4 @@ export function useAPI() {
     throw new Error("Context must be used within a Provider");
   }
   return context;
-}
+} */
